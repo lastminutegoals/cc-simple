@@ -1,0 +1,7 @@
+.cc-simple .cc-prompt {
+    @apply fixed bottom-0 z-[999] flex w-full transform-gpu items-center justify-center bg-white py-8 shadow-2xl-up;
+}
+
+.cc-simple .cc-prompt main {
+    @apply flex max-w-screen-sm flex-col gap-y-6 px-6;
+}

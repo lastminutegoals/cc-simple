@@ -1,0 +1,46 @@
+label.cc-toggle {
+    @apply relative flex w-12 items-center;
+}
+
+label.cc-toggle > * {
+    @apply cursor-pointer;
+}
+
+label.cc-toggle > input {
+    @apply relative h-6 w-12 appearance-none border-0 bg-transparent text-transparent checked:bg-transparent hover:bg-transparent;
+}
+
+label.cc-toggle > input:disabled + div {
+    @apply opacity-20;
+}
+
+label.cc-toggle > input::before {
+    @apply absolute top-[2px] left-[2px] z-10 h-5 w-5 rounded-full bg-white transition-all;
+    content: "";
+}
+
+label.cc-toggle > input:checked::before {
+    @apply translate-x-6;
+}
+
+label.cc-toggle > input:checked + div {
+    @apply bg-slate-600;
+}
+
+label.cc-toggle > div {
+    @apply absolute h-6 w-12 rounded-full bg-slate-400 transition-all;
+}
+
+label.cc-toggle > div > span {
+    @apply absolute top-1 h-4 w-4;
+}
+
+label.cc-toggle > div > span:first-child {
+    @apply left-[6px];
+    background-image: url('data:image/svg+xml,%3Csvg xmlns="http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg" viewBox="0 0 24 24"%3E%3Cpath fill="%23ffffff" d="m9.55 18l-5.7-5.7l1.425-1.425L9.55 15.15l9.175-9.175L20.15 7.4Z"%2F%3E%3C%2Fsvg%3E');
+}
+
+label.cc-toggle > div > span:last-child {
+    @apply right-[6px];
+    background-image: url('data:image/svg+xml,%3Csvg xmlns="http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg" viewBox="0 0 24 24"%3E%3Cpath fill="%23ffffff" d="M6.4 19L5 17.6l5.6-5.6L5 6.4L6.4 5l5.6 5.6L17.6 5L19 6.4L13.4 12l5.6 5.6l-1.4 1.4l-5.6-5.6Z"%2F%3E%3C%2Fsvg%3E');
+}

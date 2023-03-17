@@ -1,0 +1,7 @@
+@import "./prompt.css";
+@import "./modal.css";
+@import "./checkbox.css";
+@import "./elements.css";
+@import "./icons.css";
+
+@import "tailwindcss/utilities";

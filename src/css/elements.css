@@ -1,0 +1,35 @@
+.cc-simple {
+    @apply fixed z-[999] font-cc-sans-serif leading-normal;
+}
+
+.cc-simple p {
+    @apply text-sm;
+}
+
+.cc-simple h3 {
+    @apply font-semibold text-slate-700;
+}
+
+.cc-simple .cc-link {
+    @apply inline-block cursor-pointer font-semibold text-slate-700 underline hover:no-underline;
+}
+
+.cc-simple .cc-btn {
+    @apply mx-0 cursor-pointer rounded py-2 px-4 text-center text-sm font-semibold text-slate-100;
+}
+
+.cc-simple .cc-btn.cc-btn-blue {
+    @apply bg-slate-700 hover:bg-slate-800;
+}
+
+.cc-simple .cc-btn.cc-btn-gray {
+    @apply bg-slate-200 hover:bg-slate-300;
+}
+
+.cc-simple .cc-btn.cc-btn-square {
+    @apply py-2 px-2;
+}
+
+.cc-simple .cc-btn.cc-btn-inverted {
+    @apply text-slate-700;
+}
