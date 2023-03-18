@@ -1,18 +1,18 @@
+export function hidePrompt() {
+    document.querySelector('.cc-prompt').classList.add('animate-prompt-down');
+}
 export function getModalOptions(acceptAll) {
     const nodeList = document.querySelectorAll('.cc-modal ul li');
     const options = {};
     nodeList.forEach(node => {
         if (node.dataset.ccValue && acceptAll) {
-            options[node.dataset.ccValue] = 'allowed';
+            options[node.dataset.ccValue] = 'granted';
         }
         else if (node.dataset.ccValue) {
-            options[node.dataset.ccValue] = node.querySelector('input')?.checked ? 'allowed' : 'denied';
+            options[node.dataset.ccValue] = node.querySelector('input')?.checked ? 'granted' : 'denied';
         }
     });
     return options;
-}
-export function promptHide() {
-    document.querySelector('.cc-prompt').classList.add('animate-prompt-down');
 }
 export function toggleModal(direction, destroy) {
     const modal = document.querySelector('.cc-simple .cc-modal');

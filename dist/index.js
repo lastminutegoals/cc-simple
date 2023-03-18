@@ -1,6 +1,6 @@
-import { renderConsent, getModalOptions, toggleModal, promptHide, validateCCStorage, writeCCStorage } from './helpers/index.js';
+import { renderConsent, getModalOptions, toggleModal, hidePrompt, validateStorage, writeStorage } from './helpers/index.js';
 export function ccSimple(params) {
-    if (validateCCStorage(params.revision)) {
+    if (validateStorage(params.revision)) {
         return;
     }
     renderConsent(params.consentList, params.policyURL);
@@ -16,27 +16,27 @@ export function ccSimple(params) {
         toggleModal('down');
     });
     document.querySelector('[data-cc="save"]').addEventListener('click', () => {
-        writeCCStorage({
+        writeStorage({
             revision: params.revision,
             expire: params.expire,
             consentList: getModalOptions(),
         });
         toggleModal('down', true);
-        promptHide();
+        hidePrompt();
     });
     document.querySelectorAll('[data-cc="accept"]').forEach(node => {
         node.addEventListener('click', () => {
-            writeCCStorage({
+            writeStorage({
                 revision: params.revision,
                 expire: params.expire,
                 consentList: getModalOptions(),
             });
             if (modal.dataset.visible === 'true') {
                 toggleModal('down', true);
-                promptHide();
+                hidePrompt();
             }
             else {
-                promptHide();
+                hidePrompt();
             }
         });
     });

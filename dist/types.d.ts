@@ -12,5 +12,5 @@ export type InitParams = {
 export type StorageData = {
     revision: number;
     expire: number;
-    consentList: Record<string, 'allowed' | 'denied'>;
+    consentList: Record<string, 'granted' | 'denied'>;
 };

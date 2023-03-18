@@ -1,28 +1,39 @@
 import type { InitParams, StorageData } from '../types.js';
 
-export function validateCCStorage(revision: InitParams['revision']) {
+function getStorageFromLocalStorage() {
+    if (!localStorage.ccData) {
+        return null;
+    }
+
+    const storage = JSON.parse(localStorage.ccData) as StorageData;
+
+    if (
+        typeof storage.revision !== 'number' ||
+        typeof storage.expire !== 'number' ||
+        typeof storage.consentList !== 'object'
+    ) {
+        return null;
+    }
+
+    return storage;
+}
+
+export function validateStorage(revision: InitParams['revision']) {
     try {
-        if (!localStorage.cc_data) {
-            return false;
-        }
+        const storage = getStorageFromLocalStorage();
 
-        const storage = JSON.parse(localStorage.cc_data) as StorageData;
-
-        if (!storage.revision || !storage.expire || !storage.consentList) {
-            return false;
-        }
-
-        if (storage.expire < Date.now() || storage.revision !== revision) {
+        if (!storage || storage.expire < Date.now() || storage.revision !== revision) {
             return false;
         }
 
         return true;
     } catch (error) {
+        console.error(error);
         return false;
     }
 }
 
-export function writeCCStorage(data: Pick<StorageData, 'revision' | 'expire' | 'consentList'>) {
+export function writeStorage(data: Pick<StorageData, 'revision' | 'expire' | 'consentList'>) {
     data.expire = Date.now() + data.expire;
-    localStorage.setItem('cc_data', JSON.stringify(data));
+    localStorage.setItem('ccData', JSON.stringify(data));
 }
