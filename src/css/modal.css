@@ -1,5 +1,5 @@
 .cc-simple .cc-modal {
-    @apply fixed top-0 left-0 z-[1000] flex h-full w-full flex-col items-center justify-center bg-slate-700/70;
+    @apply fixed top-0 left-0 z-[999999999] flex h-full w-full flex-col items-center justify-center bg-slate-700/70;
 }
 
 .cc-simple .cc-modal[data-visible="false"] {

@@ -1,5 +1,5 @@
 .cc-simple {
-    @apply fixed z-[999] font-cc-sans-serif leading-normal;
+    @apply fixed z-[999999999] font-cc-sans-serif leading-normal;
 }
 
 .cc-simple p {
