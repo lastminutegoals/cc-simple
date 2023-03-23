@@ -37,3 +37,13 @@ export function writeStorage(data: Pick<StorageData, 'revision' | 'expire' | 'co
     data.expire = Date.now() + data.expire;
     localStorage.setItem('ccData', JSON.stringify(data));
 }
+
+export function resetStorageListener() {
+    const reset = document.querySelector('a[data-cc="reset"]');
+    if (reset) {
+        reset.addEventListener('click', () => {
+            localStorage.removeItem('ccData');
+            window.location.reload();
+        });
+    }
+}

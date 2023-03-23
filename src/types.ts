@@ -1,7 +1,9 @@
 export type InitParams = {
     revision: number;
     expire: number;
-    policyURL: string;
+    promptHTML: string;
+    headerHTML: string;
+    footerHTML: string;
     consentList: {
         title: string;
         value: string;

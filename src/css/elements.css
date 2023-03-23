@@ -15,7 +15,7 @@
 }
 
 .cc-simple .cc-btn {
-    @apply mx-0 cursor-pointer rounded py-2 px-4 text-center text-sm font-semibold text-slate-100;
+    @apply mx-0 cursor-pointer justify-center rounded py-2 px-4 text-center text-sm font-semibold text-slate-100;
 }
 
 .cc-simple .cc-btn.cc-btn-blue {

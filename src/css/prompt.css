@@ -3,5 +3,13 @@
 }
 
 .cc-simple .cc-prompt main {
-    @apply flex max-w-screen-sm flex-col gap-y-6 px-6;
+    @apply flex max-w-screen-sm flex-col gap-y-6 px-6 py-0;
+}
+
+.cc-simple .cc-prompt main > div {
+    @apply flex flex-col items-stretch justify-center gap-x-2 gap-y-2 sm:flex-row;
+}
+
+.cc-simple .cc-prompt main .cc-btn {
+    @apply flex-1;
 }

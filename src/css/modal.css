@@ -22,12 +22,17 @@
 .cc-simple .cc-modal header {
     @apply border-b border-b-slate-100;
 }
+
 .cc-simple .cc-modal footer {
-    @apply border-t border-t-slate-100;
+    @apply flex flex-col items-stretch gap-x-2 gap-y-2 border-t border-t-slate-100 sm:flex-row;
 }
 
-.cc-simple .cc-modal main > div h3 {
-    @apply pb-4;
+.cc-simple .cc-modal footer .cc-btn {
+    @apply flex-1;
+}
+
+.cc-simple .cc-modal main > div {
+    @apply flex flex-col gap-y-2;
 }
 
 .cc-simple .cc-modal main ul {
@@ -38,18 +43,22 @@
     @apply flex flex-col;
 }
 
-.cc-simple .cc-modal main ul li > div {
-    @apply flex justify-between rounded-t bg-slate-100 p-2;
-}
-
 .cc-simple .cc-modal main ul li .cc-expand {
     @apply flex cursor-pointer select-none items-center;
 }
 
-.cc-simple .cc-modal main ul li p {
-    @apply hidden rounded-b border-t border-t-slate-200 bg-slate-50 p-4 text-sm;
+.cc-simple .cc-modal main ul li > div:first-child {
+    @apply flex justify-between rounded-t bg-slate-100 p-2;
 }
 
-.cc-simple .cc-modal main ul li[data-expanded="true"] p {
-    @apply block;
+.cc-simple .cc-modal main ul li > div:last-child {
+    @apply hidden flex-col gap-y-2 rounded-b border-t border-t-slate-200 bg-slate-50 p-4 text-sm;
+}
+
+.cc-simple .cc-modal main ul li[data-expanded="true"] > div:last-child {
+    @apply flex;
+}
+
+.cc-simple .cc-modal main ul li[data-expanded="true"] .cc-icon {
+    @apply rotate-180;
 }
